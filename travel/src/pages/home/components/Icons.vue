@@ -20,61 +20,17 @@
 <script>
 export default {
   name: "HomeIcons",
+  props:{
+    list: Array
+  },
   data(){
     return {
-      iconList: [
-        {
-          id: '001',
-          imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          desc: '热门景点'
-        },
-        {
-          id: '002',
-          imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-          desc: '一日游'
-        },
-        {
-          id: '003',
-          imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/20/831d62d2e1c7be02.png',
-          desc: '古迹文化'
-        },
-        {
-          id: '004',
-          imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/97/02f5043b51b2102.png',
-          desc: '牛首山'
-        },
-        {
-          id: '005',
-          imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          desc: '热门景点'
-        },
-        {
-          id: '006',
-          imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-          desc: '一日游'
-        },
-        {
-          id: '007',
-          imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/20/831d62d2e1c7be02.png',
-          desc: '古迹文化'
-        },
-        {
-          id: '008',
-          imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/97/02f5043b51b2102.png',
-          desc: '牛首山'
-        },
-        {
-          id: '009',
-          imgUrl: 'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/b71c1387a921ccf9c6edc7e8def3da90.png',
-          desc: '红山动物园'
-        }
-      ]
     }
   },
   computed: {
     pages() {
       const pages = [];
-      this.iconList.forEach((item, index)=>{
+      this.list.forEach((item, index)=>{
         const page = Math.floor(index/8);
         if(!pages[page]){
           pages[page] = []

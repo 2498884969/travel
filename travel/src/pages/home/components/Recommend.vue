@@ -2,7 +2,7 @@
   <div>
     <div class="title">热点推荐</div>
     <ul>
-      <li class="item" v-for="item in recommendList" :key="item.id">
+      <li class="item" v-for="item in list" :key="item.id">
         <img class="item-img" :src="item.imgUrl" alt="">
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -17,34 +17,11 @@
 <script>
     export default {
         name: "HomeRecommend",
+        props: {
+          list: Array
+        },
         data(){
           return{
-            recommendList: [
-              {
-                id: '001',
-                imgUrl:'http://img1.qunarzz.com/sight/p0/1511/ea/eaf1bdc38aed9e6690.img.jpg_200x200_3032bf56.jpg',
-                title: '银杏湖乐园',
-                desc: '银杏湖乐园描述银杏湖乐园描述'
-              },
-              {
-                id: '002',
-                imgUrl:'http://img1.qunarzz.com/sight/p0/1511/ea/eaf1bdc38aed9e6690.img.jpg_200x200_3032bf56.jpg',
-                title: '银杏湖乐园',
-                desc: '银杏湖乐园描述银杏湖乐园描述'
-              },
-              {
-                id: '003',
-                imgUrl:'http://img1.qunarzz.com/sight/p0/1511/ea/eaf1bdc38aed9e6690.img.jpg_200x200_3032bf56.jpg',
-                title: '银杏湖乐园',
-                desc: '银杏湖乐园描述银杏湖乐园描述'
-              },
-              {
-                id: '004',
-                imgUrl:'http://img1.qunarzz.com/sight/p0/1511/ea/eaf1bdc38aed9e6690.img.jpg_200x200_3032bf56.jpg',
-                title: '银杏湖乐园',
-                desc: '银杏湖乐园描述银杏湖乐园描述'
-              },
-            ]
           }
         }
     }

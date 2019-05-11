@@ -2,7 +2,7 @@
   <div>
     <div class="title">热点推荐</div>
     <ul>
-      <li class="item" v-for="item in recommendList" :key="item.id">
+      <li class="item" v-for="item in list" :key="item.id">
         <div class="item-img-content">
           <img class="item-img" :src="item.imgUrl" alt="">
         </div>
@@ -18,34 +18,9 @@
 <script>
   export default {
     name: "HomeWeekend",
+    props: {list:Array},
     data(){
       return{
-        recommendList: [
-          {
-            id: '001',
-            imgUrl:'https://imgs.qunarzz.com/sight/source/1603/6d/2f67ae0659f41f.jpg_r_640x214_bf6cbd0b.jpg',
-            title: '银杏湖乐园',
-            desc: '银杏湖乐园描述银杏湖乐园描述'
-          },
-          {
-            id: '002',
-            imgUrl:'https://imgs.qunarzz.com/sight/source/1603/6d/2f67ae0659f41f.jpg_r_640x214_bf6cbd0b.jpg',
-            title: '银杏湖乐园',
-            desc: '银杏湖乐园描述银杏湖乐园描述'
-          },
-          {
-            id: '003',
-            imgUrl:'https://imgs.qunarzz.com/sight/source/1603/6d/2f67ae0659f41f.jpg_r_640x214_bf6cbd0b.jpg',
-            title: '银杏湖乐园',
-            desc: '银杏湖乐园描述银杏湖乐园描述'
-          },
-          {
-            id: '004',
-            imgUrl:'https://imgs.qunarzz.com/sight/source/1603/6d/2f67ae0659f41f.jpg_r_640x214_bf6cbd0b.jpg',
-            title: '银杏湖乐园',
-            desc: '银杏湖乐园描述银杏湖乐园描述'
-          },
-        ]
       }
     }
   }
@@ -55,14 +30,13 @@
   @import "~styles/mixins"
 
   .title
-    margin-top: .2rem;
     line-height: .8rem;
     background: #cacaca
     text-indent: .2rem
   .item-img-content
     overflow: hidden
     width: 100%
-    padding-bottom: 38.93%
+    padding-bottom: 37.08%
     height: 0
     background #cacaca
     .item-img

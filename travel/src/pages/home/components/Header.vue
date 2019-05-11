@@ -6,9 +6,11 @@
   <div class="header-input">
     <span class="iconfont">&#xe632;</span>输入城市/景点/游玩/主题
   </div>
-  <div class="header-right">
-    {{city}}<span class="iconfont icon-arrow">&#xe615;</span>
-  </div>
+  <router-link to="/city">
+    <div class="header-right">
+      {{city}}<span class="iconfont icon-arrow">&#xe615;</span>
+    </div>
+  </router-link>
 </div>
 </template>
 
@@ -28,7 +30,7 @@
 @import '~styles/variables.styl'
   .header
     display: flex
-    line-height: .86 rem
+    line-height: $headerHeight
     background: $bgColor
     color: #fff
     .header-left
@@ -49,6 +51,7 @@
       border-radius: .1rem
       color: #ccc
     .header-right
+      color #fff
       text-align: center
       width: 1.24rem
       float: right

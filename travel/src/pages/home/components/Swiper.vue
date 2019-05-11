@@ -21,6 +21,7 @@
           return {
             swiperOption:{
               pagination: '.swiper-pagination',
+              autoplay: false
             }
           }
       }

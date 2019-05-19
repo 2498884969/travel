@@ -8,7 +8,7 @@
   </div>
   <router-link to="/city">
     <div class="header-right">
-      {{this.doubleCity}}<span class="iconfont icon-arrow">&#xe615;</span>
+      {{this.city}}<span class="iconfont icon-arrow">&#xe615;</span>
     </div>
   </router-link>
 </div>

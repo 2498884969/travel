@@ -8,18 +8,20 @@
   </div>
   <router-link to="/city">
     <div class="header-right">
-      {{city}}<span class="iconfont icon-arrow">&#xe615;</span>
+      {{this.doubleCity}}<span class="iconfont icon-arrow">&#xe615;</span>
     </div>
   </router-link>
 </div>
 </template>
 
 <script>
+  import {mapState, mapGetters} from 'vuex'
     export default {
-        name: "HomeHeader",
-        props:{
-          city: String
-        }
+      name: "HomeHeader",
+      computed: {
+        ...mapState(['city']),
+        ...mapGetters(['doubleCity'])
+      }
     }
 
 //    1rem = html font-size = 50px
@@ -53,8 +55,10 @@
     .header-right
       color #fff
       text-align: center
-      width: 1.24rem
+      /*width: 1.24rem*/
       float: right
+      margin-left .24 rem
+      margin-right .24 rem
       .icon-arrow
         font-size: .24 rem
 </style>

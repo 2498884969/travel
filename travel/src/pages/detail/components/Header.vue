@@ -66,7 +66,7 @@ export default {
       color white
       font-size .4 rem
   .header-fixed
-    z-index 10 
+    z-index 10
     position fixed
     top 0
     left 0

@@ -1,15 +1,16 @@
 <template>
   <div>
     <div class="banner" @click="handleBannerClick">
-      <img src="//img1.qunarzz.com/sight/p0/1902/84/84696f368bbec10da3.img.jpg_600x330_5ca3e181.jpg"
+      <img :src="bannerImg"
            class="banner-img">
       <div class="banner-info">
-        <div class="banner-title">北京世界园艺博览会</div>
-        <div class="banner-number"><span class="banner-icon iconfont icon-arrow">&#xe617;</span>39</div>
+        <div class="banner-title">{{sightName}}</div>
+        <div class="banner-number"><span class="banner-icon iconfont icon-arrow">&#xe617;
+        </span>{{this.bannerImgs.length}}</div>
       </div>
     </div>
 
-    <common-gallary :imgs="imgs" v-show="showGallary" @close="handleGallaryClose"></common-gallary>
+    <common-gallary :imgs="bannerImgs" v-show="showGallary" @close="handleGallaryClose"></common-gallary>
 
   </div>
 
@@ -19,10 +20,9 @@
 import CommonGallary from 'common/gallary/Gallary'
 export default {
   name: "DetailBanner",
+  props:['sightName', 'bannerImg','bannerImgs'],
   data(){
     return{
-      imgs: ["http://img1.qunarzz.com/sight/p0/1511/ea/eaf1bdc38aed9e6690.img.jpg_r_800x800_ea8baf6d.jpg",
-        "http://img1.qunarzz.com/sight/p0/1511/ea/eaf1bdc38aed9e6690.img.jpg_r_800x800_ea8baf6d.jpg"],
       showGallary: false
     }
   },

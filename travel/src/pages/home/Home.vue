@@ -39,7 +39,20 @@ export default {
     }
   },
   computed:{
-    ...mapState(['city'])
+    // ...mapState({
+    //   city: 'city'
+    // })
+    // city(){
+    //   return this.$store.state.city;
+    // }
+    city:{
+      get: function () {
+        return this.$store.state.city;
+      },
+      set:function (newVal) {
+        this.$store.commit('changeCity', newVal)
+      }
+    }
   },
   methods: {
     getHomeInfo(){
@@ -51,7 +64,7 @@ export default {
       res = res.data;
       if(res.ret && res.data){
         const data = res.data;
-        this.city = data.city;
+        // this.city = data.city;
         this.swiperList = data.swiperList;
         this.iconList = data.iconList;
         this.recommendList = data.recommendList;

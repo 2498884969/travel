@@ -13,12 +13,13 @@
       <div class="area">
         <div class="title border-topbottom">当前城市</div>
         <div class="button-list">
-          <div class="button-wrapper"
-               v-for="item in hot"
-               :key="item.id"
-                @click="handleCityClick(item.name)">
-            <div class="button">{{item.name}}</div>
-          </div>
+
+            <div class="button-wrapper"
+                 v-for="item in hot"
+                 :key="item.id"
+                 @click="handleCityClick(item.name)">
+              <div class="button">{{item.name}}</div>
+            </div>
         </div>
       </div>
 
@@ -52,6 +53,8 @@ export default {
     handleCityClick(name){
       this.changeCity(name);
       this.$router.push('/')
+      // this.$router.go(-1)
+
     },
     ...mapMutations(['changeCity'])
   },
